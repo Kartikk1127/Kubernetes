@@ -71,3 +71,13 @@
 3. **Service :** Network endpoint to connect to a pod.
 4. **Namespace :** Filtered group of objects in cluster.
 5. Secrets, ConfigMaps, and more.
+
+## Your First Pods
+
+### Kubernetes Run, Create, and Apply
+1. Kubernetes is evolving, and so is the CLI.
+2. We get three ways to create pods from the _kubectl_ CLI.
+   1. `kubectl run` (single pod per command since 1.18)
+   2. `kubectl create` (create some resources via CLI or YAML)
+   3. `kubectl apply` (create/update anything via YAML)
+3. For now we'll just use _run_ or _create_ CLI.
