@@ -45,4 +45,29 @@
    1. Picking solutions isn't 100% rational.
    2. Trendy, will benefit your career.
    3. CIO/CTP Checkbox.
-7. 
+
+### Terminology
+1. **Kubernetes**: The whole orchestration system.
+   1. K8s "k-eights" or _Kube_ for short.
+2. **Kubectl**: CLI to configure Kubernetes and manage apps.
+   1. Using "cube control" official pronunciation.
+3. **Node**: Single server in the Kubernetes cluster.
+4. **Kubelet**: Kubernetes agent running on nodes.
+5. **Control Plane**: Set of containers that manage the cluster.
+   1. Includes API server, scheduler, controller manager, etcd, and more.
+   2. Sometimes called the "master".
+
+### Installation
+1. Kubernetes is a series of containers, CLI's and configurations.
+2. Many ways to install.
+3. Docker Desktop: Enable in settings
+   1. Sets up everything inside Docker's existing Linux VM.  
+
+### Kubernetes Container Abstractions
+1. **Pod :** One or more containers running together on one Node.
+   1. Basic unit of deployment. Containers are always in pods.
+2. **Controller :** For creating/updating pods and other objects.
+   1. Many types of controllers inc. Deployment, ReplicaSet, StatefulSet, DaemonSet, Job, CronJob, etc.
+3. **Service :** Network endpoint to connect to a pod.
+4. **Namespace :** Filtered group of objects in cluster.
+5. Secrets, ConfigMaps, and more.
