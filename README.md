@@ -95,3 +95,51 @@
    1. `kubectl create deployment test --image nginx --dry-run=client -o yaml`
    2. `kubectl create job test --image nginx --dry-run=client -o yaml`
    3. `kubectl expose deployment/test --port 80 --dry-run=client -o yaml` [You need the deployment to exist before this works]
+
+## Imperative vs Declarative
+1. **Imperative**: Focus on how a program operates.
+2. **Declarative**: Focus on what a program should accomplish.
+3. Example: "I'd like a cup of coffee"
+4. **Imperative**: I boil water, scoop out 42 grams of medium-fine grounds, poor over 700 gms of water, etc.
+5. **Declarative**: "Barista, I'd like a cup of coffee". (Barista is the engine that works through the steps, including retrying to make a cup, and is only finished when I have a cup)
+
+### Kubernetes Imperative
+1. Examples: `kubectl run`,`kubectl create deployment`, `kubectl update`.
+   1. We start with a state we know(no deployment exists).
+   2. We ask kubectl run to create a deployment.
+2. Different commands are required to change that deployment.
+3. Different commands are required per object.
+4. Imperative is easier when you know the state.
+5. Imperative is easier to get started.
+6. Imperative is easier for humans at the CLI.
+7. Imperative is NOT easy to automate.
+
+### Kubernetes Declarative
+1. Example: `kubectl apply -f my-resources.yaml`
+   1. We don't know the current state.
+   2. We only know what we want the end result to be (yaml contents).
+2. Same command each time (tiny exception for delete).
+3. Resources can be all in a file, or many files (apply a whole directory).
+4. Requires understanding the YAML keys and values.
+5. More work than `kubectl run` for just starting a pod.
+6. The easiest way to automate.
+7. The eventual path to GitOps happiness.
+
+## Three Management Approaches
+1. **Imperative commands**: `run, expose, scale, edit, create deployment`
+   1. Best for dev/learning/personal projects.
+   2. Easy to learn, hardest to manage over time.
+2. **Imperative objects**: `create -f file.yml, replace -f file.yml, delete`...
+   1. Good for prod of small environments, single file per command.
+   2. Store your changes in git-based yaml files.
+   3. Hard to automate.
+3. **Declarative objects**: `apply -f file.yml` or `dir\, diff`
+   1. Best for prod, easier to automate.
+   2. Harder to understand and predict changes.
+
+### Advice
+1. Don't mix the above 3 approaches.
+2. Learn the imperative CLI for easy control of local and test setups.
+3. Move to **apply -f file.yml** and **apply -f directory** for prod.
+4. Store yaml in git, git commit each change before you apply.
+5. This trains you for later doing GitOps (where git commits are automatically applied to clusters)

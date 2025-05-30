@@ -135,3 +135,13 @@
 3. So far we've been using hostnames to access Services: `curl <hostname>`
 4. But that only works for Services in the same namespace: `kubectl get namespaces`
 5. Services also have a Fully Qualified Domain Name(FQDN): `curl <hostname>.<namespace>.svc.cluster.local`
+ 
+## Moving to Declarative Kubernetes YAML
+
+### kubectl apply
+1. `kubectl apply -f myfile.yaml`[create/update resources in a file]
+2. `kubectl apply -f myyaml/`[create/update a whole directory of yaml]
+3. `kubectl apply -f https.//bret.run/pod.yml`[create/update from a URL]
+4. Be careful before applying changes to a pod via url. Try curling it first.
+
+
