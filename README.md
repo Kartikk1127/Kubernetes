@@ -80,4 +80,18 @@
    1. `kubectl run` (single pod per command since 1.18)
    2. `kubectl create` (create some resources via CLI or YAML)
    3. `kubectl apply` (create/update anything via YAML)
-3. For now we'll just use _run_ or _create_ CLI.
+3. For now, we'll just use _run_ or _create_ CLI.
+
+## Resource Generators
+1. These commands use helper templates called "generators".
+2. Every resource in Kubernetes has a specification or "spec".
+3. Eg: `kubectl create deployment sample --image nginx --dry-run=client -o yaml`
+4. You can output those templates with `--dry-run=client -o yaml`
+5. You can use those YAML defaults as a starting point.
+6. Generators are "opinionated defaults"
+
+### Generator Examples
+1. Using dry-run with yaml output we can see the generators.
+   1. `kubectl create deployment test --image nginx --dry-run=client -o yaml`
+   2. `kubectl create job test --image nginx --dry-run=client -o yaml`
+   3. `kubectl expose deployment/test --port 80 --dry-run=client -o yaml` [You need the deployment to exist before this works]
