@@ -144,4 +144,32 @@
 3. `kubectl apply -f https.//bret.run/pod.yml`[create/update from a URL]
 4. Be careful before applying changes to a pod via url. Try curling it first.
 
+## Storage in Kubernetes
+1. Storage and stateful workloads are harder in all systems.
+2. Containers make it both harder and easier than before.
+3. **StatefulSets** is a new resource type, making Pods more sticky.
+4. Recommendation: Avoid stateful workloads for first few deployments until you're good at the basics.
+5. Use db-as-a-service whenever you can.
+
+### Volumes in Kubernetes
+1. Creating and connecting Volumes: 2 types.
+2. **Volumes**
+   1. Tied to lifecycle of a Pod.
+   2. All containers in a single Pod can share them.
+3. **PersistentVolumes**
+   1. Created at the cluster level, outlives a Pod.
+   2. Separates storage config from Pod using it.
+   3. Multiple pods can share them.
+4. CSI plugins are the new way to connect to storage.
+
+## Higher Deployment Abstractions
+1. All our kubectl commands just talk to the kubernetes API.
+2. Kubernetes has limited built-in templating, versioning, tracking, and management of your apps.
+3. There are now over 60 3rd party tools to do that, but many are defunct.
+4. **Helm** is the most popular.
+5. **Compose on Kubernetes** comes with Docker desktop.
+6. Remember these are optional, and your distro may have a preference.
+7. Most distros support **Helm**
+
+
 
