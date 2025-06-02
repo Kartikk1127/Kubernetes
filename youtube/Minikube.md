@@ -1,0 +1,1 @@
+Follow this: [Minikube installation guide](https://github.com/LondheShubham153/kubestarter/blob/main/minikube_installation.md)
