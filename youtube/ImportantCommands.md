@@ -12,4 +12,4 @@
 11. `kubectl scale deployment <deployment name> -n <namespace> --replicas=<desired count>` [To scale the number of pods]
 12. `kubectl get pods -n <namespace> -o wide` [Will fetch you more information about the pod]
 13. `kubectl set image deployment/<deployment name> -n <namespace> <container name>=<new image with tag>` [Deployment makes it possible to update the images at runtime without causing any downtime]
-14. 
+14. `kubectl logs pod/<pod name> -n <namespace>` [To view logs for a pod]
