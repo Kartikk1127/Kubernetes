@@ -1,0 +1,5 @@
+#This is the manifest file. Often used via kubectl apply commands
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: nginx
