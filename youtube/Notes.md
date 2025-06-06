@@ -6,4 +6,5 @@
    2. For a pod, you need a deployment.
    3. For a deployment, you need a service.
 5. A **namespace** in Kubernetes is a unit that holds all the resources for that particular group(let's say for nginx--pod, deployment, service). This helps in managing the resources.
-6. 
+6. **Ingress** helps in re-routing traffic.
+7. 
