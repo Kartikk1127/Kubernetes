@@ -1,5 +1,5 @@
 1. In order to set up routing of various endpoints to different services like a microservices architecture, we need ingress.
-2. To setup ingress, first make sure the services are running on the same namespaces.
+2. To set up ingress, first make sure the services are running on the same namespaces.
 3. Then we need to make a ingress controller.
 
 ### Commands
